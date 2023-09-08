@@ -44,5 +44,7 @@ from PIL import Image, ImageFilter
 
 img = Image.open('.\character design 1.png')
 print(img.size)
-resized_image = img.resize((400, 400))
-resized_image.save('resized_image.png', 'png')
+img.thumbnail((400, 200))
+resized_image = img.convert('RGB')
+resized_image.save('resized_image.jpg')
+print(resized_image.size)
